@@ -1,0 +1,19 @@
+.sign-in {
+  display: flex;
+  flex-direction: column;
+  min-width: 20vw;
+  max-width: 300px;
+  margin: 5px auto;
+
+  .title {
+    margin-bottom: 1rem;
+  }
+
+  .sign-up-dialogue {
+    margin: 1rem 0;
+
+    a {
+      color: #223a72;
+    }
+  }
+}

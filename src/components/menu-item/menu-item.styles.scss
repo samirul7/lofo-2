@@ -1,0 +1,12 @@
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-width: 28vw;
+  height: 280px;
+  background-color: #73d8ae;
+  margin: 5px;
+  cursor: pointer;
+}

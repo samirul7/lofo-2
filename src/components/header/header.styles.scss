@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+  padding: 10px 40px;
+  justify-content: space-between;
+  align-items: center;
+
+  .options {
+    display: flex;
+
+    .option {
+      padding: 5px 10px;
+      text-transform: uppercase;
+
+      &:hover {
+        background-color: #6f8dd3;
+        color: white
+      }
+    }
+  }
+
+}
