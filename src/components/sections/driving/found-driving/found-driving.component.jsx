@@ -1,33 +1,28 @@
 import React from "react";
-import "./found-aadhaar.styles.scss";
+import "./found-driving.styles.scss";
 
+import CleaveFormInput from "../../../cleave-form-input/cleave-form-input.component";
 import NormalFormInput from "../../../normal-form-input/normal-form-input.component";
 import CustomButton from "../../../custom-button/custom-button.component";
-import CleaveFormInput from "../../../cleave-form-input/cleave-form-input.component";
 
-class FoundAadhaar extends React.Component {
+class FoundDriving extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      aadhaarNo: "",
+      dlNo: "",
       name: "",
       dob: "",
     };
   }
-
   handleChange = (event) => {
     const { name, value, rawValue } = event.target;
-    let actualValue;
-    switch (name) {
-      case "aadhaarNo":
-        actualValue = rawValue;
-        break;
-      case "dob":
-        actualValue = rawValue;
-        break;
-      default:
-        actualValue = value;
+    let actualValue = value;
+
+    if (name === "dlNo") {
+      actualValue = rawValue.toUpperCase();
+    } else if (name === "dob") {
+      actualValue = rawValue;
     }
 
     this.setState({
@@ -39,22 +34,23 @@ class FoundAadhaar extends React.Component {
     event.preventDefault();
     // backend job
   };
-
   render() {
     const { name } = this.state;
     return (
       <div className="found">
-        <h3 className="title">I found an aadhaar card.</h3>
-        <span className="subtile">
-          Fill aadhaar number, name and date of birth.
-        </span>
+        <h3 className="title">I found a driving license.</h3>
+        <span className="subtile">Fill DL number, name and date of birth.</span>
         <form onSubmit={this.handleSubmit} className="lost-form">
           <CleaveFormInput
-            options={{ blocks: [4, 4, 4], delimiter: " ", numericOnly: true }}
+            options={{
+              blocks: [2, 2, 4, 7],
+              delimiter: "-",
+              capitalizeFirst: true,
+            }}
             handleChange={this.handleChange}
-            name="aadhaarNo"
-            id="faadhaarNo"
-            label="Aadhaar No"
+            name="dlNo"
+            id="fdlNo"
+            label="Driving License No"
             required
           />
           <NormalFormInput
@@ -63,7 +59,7 @@ class FoundAadhaar extends React.Component {
             value={name}
             id="fname"
             handleChange={this.handleChange}
-            label="Name on aadhaar"
+            label="Name on driving license"
             maxLength="25"
             required
           />
@@ -85,4 +81,4 @@ class FoundAadhaar extends React.Component {
   }
 }
 
-export default FoundAadhaar;
+export default FoundDriving;
