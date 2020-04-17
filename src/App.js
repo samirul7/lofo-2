@@ -13,6 +13,7 @@ import VoterPage from "./pages/sections/voter/voter.component";
 import PanPage from "./pages/sections/pan/pan.component";
 import PassportPage from "./pages/sections/passport/passport.component";
 import DrivingPage from "./pages/sections/driving/driving.component";
+import DebitPage from "./pages/sections/debit/debit.component";
 
 class App extends React.Component {
   constructor(props) {
@@ -57,6 +58,7 @@ class App extends React.Component {
             exact
             component={isLogin ? DrivingPage : null}
           />
+          <Route path="/debit" exact component={isLogin ? DebitPage : null} />
         </Switch>
       </div>
     );
