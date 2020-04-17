@@ -80,7 +80,7 @@ class LostDriving extends React.Component {
             }}
             required
           />
-          <CustomButton type="submit">Submit</CustomButton>
+          <CustomButton type="submit">Search</CustomButton>
         </form>
       </div>
     );

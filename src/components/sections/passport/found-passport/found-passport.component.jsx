@@ -72,7 +72,7 @@ class FoundPassport extends React.Component {
             handleChange={this.handleChange}
             required
           />
-          <CustomButton type="submit">Search</CustomButton>
+          <CustomButton type="submit">Submit</CustomButton>
         </form>
       </div>
     );
